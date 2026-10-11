@@ -1,0 +1,54 @@
+{
+  "_description": "Registre des sources des fichiers data/*.json du skill artiste-auteur. Vérification annuelle en janvier (PASS, SMIC, taux, seuils) et après chaque loi de finances / LFSS.",
+  "sources": [
+    {
+      "id": "cotisations-artistes-auteurs",
+      "file": "cotisations.json",
+      "source_officielle": "urssaf.fr — Taux de cotisations artiste-auteur (mise à jour 01/01/2026) ; secu-artistes-auteurs.fr — barèmes sociaux et « ce qui change en 2026 »",
+      "textes": "CSS L. 382-1, L. 382-3, R. 382-1 à R. 382-37 (décret n° 2026-897 du 24/09/2026)",
+      "verification_manuelle": "https://www.urssaf.fr/accueil/outils-documentation/taux-baremes/taux-de-cotisations-artiste-aute.html",
+      "update_frequency": "annual",
+      "last_fetched": "2026-10-03",
+      "next_check": "2027-01-15",
+      "check_instructions": "Vérifier PASS, SMIC horaire au 1er janvier, les cinq taux (vieillesse ×2, CSG, CRDS, CFP) et la part prise en charge par l'État, le seuil RAAP (IRCEC mémo), le plafond accessoires (1 200 SMIC h), le forfait de début d'activité (150 SMIC h à partir de 2027)."
+    },
+    {
+      "id": "raap-ircec",
+      "file": "cotisations.json (retraite_complementaire_raap)",
+      "source_officielle": "IRCEC — mémo des valeurs 2026 ; calcul et taux RAAP",
+      "verification_manuelle": "https://www.ircec.fr/actualite/memo-des-valeurs-2026/",
+      "update_frequency": "annual",
+      "last_fetched": "2026-10-03",
+      "next_check": "2027-01-15"
+    },
+    {
+      "id": "tva-franchise-auteurs",
+      "file": "tva-franchise.json",
+      "source_officielle": "CGI art. 293 B (version 01/03/2025 → 01/01/2027), 279 g, 285 bis ; BOI-TVA-DECLA-40-30-20260701 ; fiche DGFiP « régimes réservés aux petites entreprises » 2026",
+      "verification_manuelle": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000052488142",
+      "update_frequency": "annual",
+      "last_fetched": "2026-10-03",
+      "next_check": "2027-01-15",
+      "check_instructions": "Au 01/01/2027 : recodification dans le code des impositions sur les biens et services (ordonnance n° 2025-1247) — retrouver les nouveaux articles, vérifier les quatre plafonds (50 000/55 000, 35 000/38 500) et le taux de 10 %."
+    },
+    {
+      "id": "impot-revenu-droits-auteur",
+      "file": "impot-revenu.json",
+      "source_officielle": "CGI art. 93 1 quater, 102 ter (version 01/07/2026), 151-0, 241 ; BOI-BNC-SECT-20-10-20 ; BOI-BNC-DECLA-20-10-20260819 ; BOI-BAREME-000044-20260819 ; formulaire 2042 C PRO 2026",
+      "verification_manuelle": "https://www.impots.gouv.fr/particulier/droits-dauteur",
+      "update_frequency": "annual",
+      "last_fetched": "2026-10-03",
+      "next_check": "2027-04-15",
+      "check_instructions": "Après publication des formulaires du millésime : vérifier les cases 2042 C PRO (5HQ, 5QC, 5TE, 5KU) et 2042 (1GF), le seuil micro-BNC (83 600 € jusqu'aux revenus 2028), la limite RFR du versement libératoire."
+    },
+    {
+      "id": "regularisation",
+      "file": "regularisation.json",
+      "source_officielle": "CGI art. 1727, 1728, 1729, 1758 A ; LPF L. 169 ; impots.gouv (corriger ma déclaration, délai de paiement) ; urssaf.fr (majorations de retard, délai de paiement, remise) ; CSS L. 244-3, R. 382-28",
+      "verification_manuelle": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051213330",
+      "update_frequency": "annual",
+      "last_fetched": "2026-10-03",
+      "next_check": "2027-01-15"
+    }
+  ]
+}

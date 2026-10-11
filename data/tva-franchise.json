@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "description": "Franchise en base de TVA et taux applicables aux auteurs d'œuvres de l'esprit — valeurs 2026",
+    "texte": "CGI art. 293 B (version en vigueur du 01/03/2025 au 01/01/2027), art. 279 g, art. 285 bis",
+    "doctrine": "BOI-TVA-DECLA-40-30-20260701 (franchise spécifique auteurs), BOI-TVA-DECLA-40-10-10-20260701 (droit commun)",
+    "sources": [
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000052488142",
+      "https://bofip.impots.gouv.fr/bofip/148-PGP.html/identifiant=BOI-TVA-DECLA-40-30-20260701",
+      "https://www.impots.gouv.fr/sites/default/files/media/3_Documentation/depliants/pro_fiche_regimes_reserves_aux_petites_entreprises_2026.pdf",
+      "https://entreprendre.service-public.gouv.fr/vosdroits/F21746"
+    ],
+    "last_fetched": "2026-10-03",
+    "a_verifier": "Au 01/01/2027 l'art. 293 B est recodifié dans le code des impositions sur les biens et services (ordonnance n° 2025-1247 du 17/12/2025) : vérifier la nouvelle numérotation et que c'est à droit constant. Le seuil unique de 25 000 € (LF 2025) a été abrogé par la loi n° 2025-1044 du 03/11/2025 : ne pas l'appliquer."
+  },
+
+  "franchise_specifique_auteurs": {
+    "description": "CGI 293 B, I bis. S'applique aux auteurs d'œuvres de l'esprit (hors architectes) pour la livraison de leurs œuvres (CPI L. 112-2, 1° à 12° — les logiciels, 13°, sont exclus) et la cession de leurs droits patrimoniaux. Deux plafonds distincts, appréciés SÉPARÉMENT.",
+    "oeuvres_et_droits": {
+      "plafond_annee_precedente": 50000,
+      "plafond_majore_annee_en_cours": 55000
+    },
+    "autres_operations": {
+      "plafond_annee_precedente": 35000,
+      "plafond_majore_annee_en_cours": 38500,
+      "exemples": ["formation", "conseil", "ateliers", "conférences", "prestations de services annexes"]
+    },
+    "regle_non_cumul": "Un auteur relevant du I bis ne peut PAS invoquer les plafonds de droit commun du I (37 500 / 41 250 €) pour ses autres activités : seuls les plafonds spécifiques s'appliquent (BOI-TVA-DECLA-40-30 §1, §250).",
+    "exclus_du_ca_oeuvres": ["rémunération pour copie privée", "recettes exceptionnelles (BOI §210)"]
+  },
+
+  "franchise_droit_commun": {
+    "description": "CGI 293 B, I — pour mémoire (assujettis NON auteurs, ou auteurs n'ayant aucune opération du I bis B).",
+    "prestations_de_services": { "plafond_annee_precedente": 37500, "plafond_majore_annee_en_cours": 41250 },
+    "ventes_hebergement": { "plafond_annee_precedente": 85000, "plafond_majore_annee_en_cours": 93500 }
+  },
+
+  "mecanique_des_seuils": {
+    "acces": "La franchise s'applique si le CA de l'année civile précédente (N-1) ne dépasse pas le plafond bas.",
+    "depassement_plafond_bas_en_N": "Franchise conservée pour toute l'année N ; TVA due à compter du 1er janvier N+1.",
+    "depassement_plafond_majore_en_N": "La franchise cesse pour les opérations intervenant à compter de la DATE du dépassement (293 B, II) — pas de rétroactivité au 1er janvier ni au 1er du mois.",
+    "effet_croise": "Incertain depuis le retrait (01/07/2026) de l'annexe BOI-ANNX-000189 : le dépassement d'un des deux plafonds du I bis peut faire perdre la franchise sur l'ensemble (BOI §250, remarque). À faire trancher par un expert-comptable."
+  },
+
+  "taux": {
+    "cession_droits_auteur": { "taux": 0.10, "texte": "CGI 279 g (version 01/03/2026)", "exclusions": ["œuvres d'architecture", "logiciels", "œuvres cinématographiques projetées en salle/festival"] },
+    "prestations_de_services_droit_commun": { "taux": 0.20, "note": "Taux normal — s'applique aux prestations qui ne sont pas des cessions de droits (formation, conseil, services électroniques)." }
+  },
+
+  "retenue_tva_tiers_payeurs": {
+    "texte": "CGI 285 bis (version depuis 01/03/2025)",
+    "qui": ["éditeurs", "organismes de gestion collective", "producteurs"],
+    "regle": "Retenue de la TVA due par l'auteur, acquittée au Trésor par le tiers payeur, présumée même pour les auteurs en franchise ; renonciation possible (tous les droits, notifiée à chaque payeur et au SIE, effet le 1er du mois suivant, 5 ans).",
+    "deduction_forfaitaire_auteur": 0.008,
+    "plateformes": "Une plateforme d'abonnement (Patreon, Substack, Ko-fi) n'est ni éditeur, ni OGC, ni producteur : aucune retenue. L'auteur gère seul sa TVA."
+  },
+
+  "option_tva": {
+    "effet": "1er jour du mois de la déclaration d'option",
+    "duree": "2 ans, reconduction tacite",
+    "interet": "Déduire la TVA d'amont ; facturer les droits à 10 % à des clients assujettis qui la récupèrent."
+  }
+}

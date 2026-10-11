@@ -1,0 +1,40 @@
+{
+  "_description": "Auteur d'essais vendus par abonnement sur une plateforme (sans précompte), qui a aussi une micro-entreprise de formation. Cas type pour illustrer les deux casquettes, la TVA et une régularisation.",
+  "auteur": {
+    "branche": "écrivains",
+    "oeuvres": "essais, articles d'analyse, newsletters payantes (écrits)",
+    "affiliation_artiste_auteur": false,
+    "regime_fiscal_droits": "BNC (aucun tiers déclarant français)",
+    "micro_bnc": true
+  },
+  "flux_de_revenus": [
+    { "nature": "abonnements à des écrits via plateforme (Patreon)", "qualification": "revenu artistique principal — autoédition via plateforme / droits versés par un diffuseur étranger (à confirmer : aucune source ne nomme Patreon)", "precompte": false, "recettes": { "2024": 1172.81, "2025": 14072.51, "2026_janv_sept": 14104.73, "2026_projection": 18800 } },
+    { "nature": "formation et conseil", "qualification": "hors régime artistes-auteurs → micro-entreprise (BNC, micro-social)", "recettes": { "2026_T1": 4269, "2026_T2": 9799, "2026_T3": "à compléter" } },
+    { "nature": "accès à un canal de discussion réservé aux abonnés", "qualification": "zone grise (ni œuvre ni accessoire listé) — isoler si l'offre est mixte", "recettes": "inclus dans les abonnements" }
+  ],
+  "tva": {
+    "franchise_applicable": "spécifique auteurs (293 B I bis) — pas de cumul avec le droit commun",
+    "plafond_oeuvres": "50 000 / 55 000 €",
+    "plafond_autres_operations_formation_conseil": "35 000 / 38 500 € (et non 37 500 €)",
+    "point_ouvert": "qualification TVA des abonnements (œuvres 10 % / services électroniques 20 %) et rôle de la plateforme comme fournisseur réputé"
+  },
+  "situation_declarative": {
+    "declare_urssaf_artistes_auteurs": "rien",
+    "declare_impots_droits": "rien",
+    "declare_urssaf_micro": "oui (trimestriel)",
+    "erreur_initiale": "croyait que la plateforme précomptait et déclarait comme un éditeur"
+  },
+  "calculs_attendus": {
+    "2025": { "commande": "python artiste-auteur/scripts/calc_artiste_auteur.py --recettes 14072 --annee 2025", "cotisations_urssaf": 1730.26, "raap": 0, "ir_tmi_11": 1021.63 },
+    "2026": { "commande": "python artiste-auteur/scripts/calc_artiste_auteur.py --recettes 19000", "cotisations_urssaf": 2336.20, "raap_8pct": 1153.68, "raap_option_4pct": 576.84, "ir_tmi_11": 1379.40 }
+  },
+  "plan_de_regularisation": [
+    "reconstituer les encaissements par année civile (page versements de la plateforme, relevés bancaires)",
+    "faire valider par un expert-comptable : qualification artiste-auteur, case de déclaration (auto-édition vs droits hors OGC), brut/net de commission, TVA",
+    "affiliation au guichet unique (INPI) avec la date réelle de début",
+    "déclaration URSSAF artistes-auteurs des revenus 2025 (puis 2026 en campagne 2027) ; demander un échéancier (12 mois max) si besoin",
+    "déclaration rectificative IR 2025 (2042 C PRO, 5HQ) avec courrier de bonne foi ; demander l'intérêt réduit (1727 V)",
+    "provisionner ≈ 25-30 % des encaissements courants (cotisations 12,3 % + RAAP + IR)",
+    "option RAAP 4 % avant le 30 novembre si l'assiette ≤ 32 076 € et si la trésorerie l'exige"
+  ]
+}

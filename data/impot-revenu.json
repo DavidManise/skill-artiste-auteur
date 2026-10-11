@@ -1,0 +1,66 @@
+{
+  "_meta": {
+    "description": "Impôt sur le revenu des droits d'auteur — régimes, seuils, cases — revenus 2025 (déclaration 2026) et revenus 2026",
+    "textes": "CGI art. 93 1 quater ; art. 102 ter (version 01/07/2026, décret n° 2026-562 du 29/06/2026) ; art. 151-0 (version 19/06/2025) ; art. 241",
+    "doctrine": "BOI-BNC-SECT-20-10-20 ; BOI-BNC-DECLA-20-10-20260819 ; BOI-BAREME-000044-20260819",
+    "sources": [
+      "https://www.impots.gouv.fr/particulier/droits-dauteur",
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000041469152/",
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047622381",
+      "https://bofip.impots.gouv.fr/bofip/4807-PGP.html",
+      "https://entreprendre.service-public.gouv.fr/actualites/A18813",
+      "https://www.impots.gouv.fr/sites/default/files/formulaires/2042/2026/2042_5474.pdf"
+    ],
+    "last_fetched": "2026-10-03"
+  },
+
+  "regime_par_defaut": {
+    "droits_declares_par_des_tiers": {
+      "regime": "traitements et salaires",
+      "texte": "CGI 93, 1 quater",
+      "condition": "droits INTÉGRALEMENT déclarés par des tiers tenus à la déclaration de l'art. 241 (éditeurs, SACEM, SACD, producteurs…)",
+      "abattement": "10 % pour frais sur (brut − cotisations sociales obligatoires), ou frais réels",
+      "cases_2042": ["1GF", "1HF", "1IF", "1JF"],
+      "option_bnc": "possible, 3 ans (année + 2 suivantes), via 2042 C PRO"
+    },
+    "droits_non_declares_par_des_tiers": {
+      "regime": "bénéfices non commerciaux (BNC)",
+      "exemples": ["plateformes d'abonnement (Patreon, Substack)", "autoédition", "ventes directes"],
+      "note": "Une plateforme étrangère sans déclaration art. 241 ne rend pas les droits « intégralement déclarés par des tiers » — pas de position administrative connue sur l'effet des données DAC7 (à trancher)."
+    }
+  },
+
+  "micro_bnc": {
+    "texte": "CGI 102 ter",
+    "seuil_recettes": {
+      "revenus_2023_2025": 77700,
+      "revenus_2026_2028": 83600,
+      "appreciation": "recettes HT de N-1 ou N-2 ; actualisation triennale",
+      "pluralite_activites_bnc": "TOTAL des recettes de toutes les activités BNC (droits d'auteur en BNC + consulting…) ; dépassement → exclusion pour l'ensemble (BOI-BNC-DECLA-20-10 §170-180). Les droits imposés en TS ne comptent pas, sauf option BNC."
+    },
+    "abattement_forfaitaire": 0.34,
+    "abattement_minimum": 305,
+    "maintien_apres_depassement": "les deux premières années de dépassement",
+    "cases_2042_c_pro_2026": { "professionnel": ["5HQ", "5IQ", "5JQ"], "non_professionnel": ["5KU", "5LU", "5MU"], "note": "Recettes brutes encaissées ; l'abattement est appliqué par l'administration." },
+    "exclusion": "auteurs pour lesquels la retenue de TVA de l'art. 285 bis est appliquée (fiche DGFiP 2026)"
+  },
+
+  "declaration_controlee": {
+    "formulaire": "2035",
+    "cases_2042_c_pro_2026": ["5QC", "5RC", "5SC"],
+    "option": "au titre de 2026 jusqu'au 20/05/2027, reconduction tacite (fiche DGFiP 2026)"
+  },
+
+  "versement_liberatoire": {
+    "texte": "CGI 151-0",
+    "taux_bnc": 0.022,
+    "conditions_cumulatives": [
+      "relever du micro (50-0 ou 102 ter)",
+      "RFR du foyer de N-2 ≤ limite supérieure de la 2e tranche du barème par part (pour 2026 : RFR 2024 ≤ 29 315 € par part, +50 % par demi-part, +25 % par quart de part)",
+      "être soumis au régime micro-social de l'art. L. 613-7 CSS (micro-entrepreneur)"
+    ],
+    "artistes_auteurs": "Affiliés au régime général au titre de L. 382-1 CSS, PAS au micro-social L. 613-7 → le versement libératoire ne peut couvrir que les recettes de la micro-entreprise, pas les droits d'auteur (lecture des textes, à confirmer par l'expert-comptable).",
+    "option": "auprès de l'URSSAF avant le 30/09 de N pour N+1",
+    "cases_2042_c_pro_2026": ["5TE", "5UE", "5VE"]
+  }
+}

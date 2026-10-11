@@ -1,0 +1,83 @@
+{
+  "skill_name": "artiste-auteur",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cotisations-micro-bnc-19000",
+      "prompt": "Je suis écrivain, affilié artiste-auteur, en micro-BNC. J'ai encaissé 19 000 € de droits d'auteur sans précompte en 2026. Combien de cotisations sociales vais-je payer, et est-ce que je dois le RAAP ?",
+      "expected_output": "Séquence complète : bénéfice 12 540 € (−34 %), assiette 14 421 € (+15 %), cotisations ligne à ligne (vieillesse plafonnée 6,15 %, CSG 9,20 %, CRDS 0,50 %, CFP 0,35 %) ≈ 2 336 €, RAAP dû (assiette ≥ 900 SMIC h) 8 % ≈ 1 154 € ou 4 % sur option ≈ 577 €, droits ouverts (4 trimestres + IJ).",
+      "files": [],
+      "assertions": [
+        "Le bénéfice est calculé avec l'abattement de 34 % (12 540 €)",
+        "L'assiette sociale est majorée de 15 % (14 421 €)",
+        "Le total des cotisations URSSAF est d'environ 2 336 € (16,20 % de l'assiette, ≈ 12,3 % des recettes)",
+        "La vieillesse déplafonnée est à 0 % après prise en charge par l'État",
+        "Le RAAP est signalé comme dû (assiette supérieure à 900 SMIC h) avec le taux de 8 % et l'option à 4 % avant le 30 novembre",
+        "Les droits ouverts (4 trimestres + indemnités journalières, assiette ≥ 600 SMIC h) sont mentionnés",
+        "Les sources sont citées (urssaf.fr taux artiste-auteur, CSS L. 382-3, IRCEC)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "patreon-qualification-et-deux-casquettes",
+      "prompt": "Je publie des essais et des analyses sur Patreon par abonnement (environ 1 500 €/mois) et, à côté, j'ai une micro-entreprise de formation. Mes abonnements Patreon, c'est du droit d'auteur ou de la micro-entreprise ? Et pour la TVA, j'ai droit à 37 500 € de franchise ?",
+      "expected_output": "Qualification : écrits vendus par abonnement = œuvres de l'esprit autoéditées via plateforme / droits versés par un diffuseur étranger → régime artistes-auteurs (liste URSSAF : autoédition via plateformes, blogueur), en signalant que Patreon n'est nommé par aucune source et que la part « communauté » éventuelle est une zone grise. La formation reste en micro-entreprise. TVA : franchise spécifique des auteurs (50 000 / 55 000 € pour les œuvres, 35 000 / 38 500 € pour les autres opérations) sans cumul avec le droit commun → la formation est plafonnée à 35 000 €, pas 37 500 €.",
+      "files": [],
+      "assertions": [
+        "Les abonnements à des écrits sont rattachés au régime des artistes-auteurs (autoédition via plateforme / diffuseur étranger) avec la réserve que Patreon n'est pas nommé par les sources",
+        "La formation est explicitement exclue du régime des artistes-auteurs (reste en micro-entreprise)",
+        "Les deux plafonds de franchise spécifique (50 000 / 55 000 et 35 000 / 38 500 €) sont donnés",
+        "Le skill indique que le plafond de droit commun de 37 500 € ne s'applique PAS (pas de cumul, BOI-TVA-DECLA-40-30)",
+        "La zone grise « accès communauté / Q&R » est signalée si l'offre est mixte",
+        "Il est recommandé de faire confirmer la qualification TVA des abonnements par un expert-comptable ou l'URSSAF par écrit",
+        "Patreon ne précompte pas : l'auteur déclare lui-même"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "regularisation-deux-annees-non-declarees",
+      "prompt": "Je viens de comprendre que Patreon ne déclare rien pour moi. J'ai encaissé 14 072 € en 2025 et 14 105 € de janvier à septembre 2026, rien n'a été déclaré ni à l'URSSAF ni aux impôts. Qu'est-ce que je fais, dans quel ordre, et combien ça va me coûter pour 2025 ?",
+      "expected_output": "Plan ordonné : reconstituer les encaissements par année civile ; affiliation au guichet unique avec la date réelle de début ; déclaration URSSAF artistes-auteurs des revenus 2025 ; déclaration rectificative IR 2025 (2042 C PRO, case 5HQ) ; demandes d'échéancier ; provision sur 2026. Coût 2025 : cotisations ≈ 1 730 € (assiette 10 681 €), RAAP non dû (assiette < 10 692 €), IR ≈ 1 020 € à TMI 11 % ; majoration fiscale écartée si correction spontanée (1758 A), intérêt de retard 0,20 %/mois réduit de moitié (1727 V) ; majorations URSSAF 5 % + 0,20 %/mois avec droit à l'erreur/remise possible ; échéancier URSSAF 12 mois max.",
+      "files": [],
+      "assertions": [
+        "Le skill explique que la plateforme ne précompte ni ne déclare rien",
+        "Les étapes sont ordonnées (reconstituer → affilier avec date réelle → déclarer URSSAF → rectifier IR → échéanciers → provisionner)",
+        "Le coût 2025 est chiffré en séquence : cotisations ≈ 1 730 €, RAAP non dû (assiette sous 10 692 €), IR estimé",
+        "La majoration de 10 % de l'art. 1758 A est présentée comme non applicable en cas de correction spontanée",
+        "L'intérêt de retard de 0,20 %/mois et sa réduction de 50 % en cas de dépôt spontané sont mentionnés",
+        "Les majorations URSSAF (5 % + 0,20 %/mois), le droit à l'erreur et la durée maximale d'échéancier (12 mois) sont mentionnés",
+        "L'évaluation d'office (+25 %) et la radiation après trois taxations d'office sont signalées comme risques de l'inaction",
+        "Le skill ne conseille pas d'emprunter pour payer et renvoie à un expert-comptable pour valider"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "atelier-ecriture-accessoire",
+      "prompt": "Auteur affilié, je donne des ateliers d'écriture dans mon atelier pour 9 000 € par an et je touche 20 000 € de droits d'auteur. Les ateliers passent dans le régime ?",
+      "expected_output": "Oui : les ateliers d'écriture sont un revenu accessoire (R. 382-1-2, cat. 1), admis parce que l'auteur a des revenus artistiques principaux, dans la limite de 1 200 SMIC h = 14 424 € en 2026 ; 9 000 € < plafond → dans le régime, déclarés en BNC. Au-delà du plafond, l'excédent relèverait des indépendants dès le premier euro. Une formation professionnelle classique, elle, serait hors régime.",
+      "files": [],
+      "assertions": [
+        "Les ateliers d'écriture sont identifiés comme revenu accessoire (catégorie 1 de R. 382-1-2)",
+        "La condition d'avoir des revenus artistiques principaux est vérifiée",
+        "Le plafond 1 200 × SMIC horaire = 14 424 € (2026) est donné et comparé aux 9 000 €",
+        "La règle au-delà du plafond (régime des indépendants dès le premier euro) est expliquée",
+        "La distinction avec une formation professionnelle (hors régime) est faite",
+        "Les revenus accessoires sont déclarés obligatoirement en BNC"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "droits-precomptes-ts-vs-bnc",
+      "prompt": "Mon éditeur me verse 8 000 € de droits par an avec précompte. Je déclare ça comment aux impôts, et est-ce que j'ai intérêt à passer en BNC ?",
+      "expected_output": "Droits intégralement déclarés par un tiers (éditeur, art. 241) → traitements et salaires par défaut (art. 93 1 quater), cases 1GF-1JF, abattement 10 % sur brut − cotisations ; option BNC possible pour 3 ans (micro-BNC abattement 34 % ou réel) — intérêt à comparer : 34 % > 10 %, mais l'option entraîne le décompte dans le seuil micro-BNC et la perte du régime TS ; la retenue de TVA de l'éditeur (285 bis) s'applique sauf renonciation.",
+      "files": [],
+      "assertions": [
+        "Le régime par défaut traitements et salaires (art. 93 1 quater) est identifié avec les cases 1GF à 1JF",
+        "L'abattement de 10 % en TS est comparé à l'abattement de 34 % en micro-BNC",
+        "L'option BNC est présentée comme valable 3 ans",
+        "La retenue de TVA par l'éditeur (art. 285 bis, 10 %) est mentionnée",
+        "Le skill nuance (pas de « toujours avantageux ») et renvoie à la situation du foyer"
+      ]
+    }
+  ]
+}

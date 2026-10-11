@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "description": "Régularisation d'omissions (IR) : majorations, intérêts, prescription, délais de paiement — valeurs 2026",
+    "textes": "CGI art. 1727 (version 16/02/2025 → 01/01/2027), 1728 (version 21/02/2026), 1729, 1758 A ; LPF art. L. 169 (version 01/07/2026)",
+    "sources": [
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051213330",
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000036428656/",
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000033815281",
+      "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051759330",
+      "https://www.impots.gouv.fr/particulier/questions/je-veux-corriger-la-declaration-que-jai-deja-deposee-comment-proceder",
+      "https://www.impots.gouv.fr/particulier/delai-de-paiement"
+    ],
+    "last_fetched": "2026-10-03",
+    "note": "Côté URSSAF artistes-auteurs, voir data/cotisations.json et references/urssaf-artistes-auteurs.md."
+  },
+
+  "interet_de_retard": {
+    "taux_mensuel": 0.002,
+    "point_de_depart_ir": "1er juillet de l'année suivant celle au titre de laquelle l'imposition est établie",
+    "reduction_depot_spontane": { "taux": 0.5, "conditions": ["déclaration rectificative déposée spontanément, hors contrôle", "bonne foi", "paiement immédiat ou échéancier accepté par le comptable public"], "texte": "CGI 1727, V" }
+  },
+
+  "majorations": {
+    "omission_dans_declaration_deposee": { "texte": "CGI 1758 A", "taux": 0.10, "taux_si_tardif_apres_mise_en_demeure": 0.20, "non_applicable_si": "correction spontanée, ou dans les 30 jours d'une demande de l'administration" },
+    "defaut_ou_retard_de_depot": { "texte": "CGI 1728", "spontane_ou_sous_30j_mise_en_demeure": 0.10, "au_dela_30j_mise_en_demeure": 0.40, "activite_occulte": 0.80 },
+    "manquement_delibere": { "texte": "CGI 1729", "taux": 0.40, "manoeuvres_frauduleuses": 0.80 }
+  },
+
+  "prescription_ir": {
+    "texte": "LPF L. 169",
+    "regle": "jusqu'à la fin de la 3e année suivant celle au titre de laquelle l'imposition est due",
+    "exemple": "revenus 2023 → reprise possible jusqu'au 31/12/2026",
+    "activite_occulte": "10 ans"
+  },
+
+  "procedure_correction": {
+    "en_ligne": "service « Corriger ma déclaration » ouvert du 29/07 au 30/11 de l'année de déclaration (2026 pour les revenus 2025)",
+    "hors_periode": "messagerie sécurisée impots.gouv : Écrire > Réclamation/Contestation > Impôt sur le revenu, ou déclaration papier portant « DÉCLARATION RECTIFICATIVE, ANNULE ET REMPLACE »",
+    "annees_anterieures": "déclaration rectificative pour chaque année non prescrite (2042 + 2042 C PRO)"
+  },
+
+  "delais_de_paiement": {
+    "cadre": "accordés « à titre exceptionnel »",
+    "demande": "messagerie sécurisée : Écrire > Paiement > Difficultés de paiement > Difficulté de paiement tout impôt ; formulaire 4805-S-SD + RIB + justificatifs",
+    "criteres": ["perte d'emploi ou baisse de revenus", "événement exceptionnel", "endettement disproportionné", "antécédents de paiement"],
+    "reponse": "2 mois (4 si complexité) ; silence = rejet ; recours au conciliateur fiscal départemental",
+    "note": "Un échéancier accepté ouvre droit à la réduction de 50 % de l'intérêt de retard (1727 V) en cas de dépôt spontané."
+  }
+}
